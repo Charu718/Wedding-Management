@@ -1,0 +1,144 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #9e836d;
+  font-family: montserrat,sans-serif;
+  
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+#email{
+	display:none;
+}
+#login {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8%;
+  padding-left: 16%;
+  margin-top: 2%;
+}
+
+#submit {
+  height: 10%;
+  width: 80%;
+  border-radius: 10px;
+  border: 1px solid grey;
+  background-color:#FFFAF6;
+  font-size: 0.8em;
+  font-family: 'Cinzel', serif;
+}
+
+input {
+  height: 10%;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding-left: 2%;
+  width: 80%;
+}
+
+#banner {
+  height: 90%;
+  width: 100%;
+  background-color:#FFFAF6;
+  padding-left: 36%;
+  padding-top: 7%;
+}
+
+img {
+  opacity: 0.5;
+  position: absolute;
+}
+
+#heading {
+  position: relative;
+    font-size: 4em;
+    padding-left: 7%;
+    padding-top: 39%;
+    font-family: 'Pacifico', cursive;
+}
+
+#slogan {
+  font-size: 1.5em;
+}
+
+#signin{
+	outline: auto;
+    height: fit-content;
+}
+
+header {
+  background-color:#fce8d7;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 3%;
+}
+
+#logo {
+  height: 10%;
+  width: 8%;
+  padding-left: 3%;
+  opacity: 1;
+
+}
+
+#name {
+  padding-left: 8%;
+  padding-top: 0.5%;
+  font-family: 'Pacifico', cursive;
+  font-size: 2em;
+}
+
+#enter {
+      width: 30%;
+    list-style-type: none;
+    display: flex;
+    gap: 7%;
+    font-size: 1em;
+    padding-top: 1.7%;
+}
+.headContent:hover{
+	 cursor: pointer;
+}
+#signin,
+#signup:hover {
+  cursor: pointer;
+}
+
+#askDetail {
+  height: 70%;
+  width: 40%;
+  position: absolute;
+  margin-top: -38%;
+  margin-left: 31%;
+  background-color: #fce8d7;
+  display: none;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 3%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#line{
+	    margin-left: 4%;
+}
+
+.alternate {
+  padding: 0px;
+  font-size: 0.5em;
+  margin-left: -93px;
+}

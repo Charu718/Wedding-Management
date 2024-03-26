@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head> 
+      <link href="form.css" rel="stylesheet" type="text/css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Fjalla+One&family=Fraunces:opsz,wght@9..144,700&family=Josefin+Sans&family=Montserrat&family=Mr+Dafoe&family=Open+Sans&family=Oswald:wght@300&family=Permanent+Marker&family=Poppins:wght@500&family=Protest+Riot&family=Quicksand:wght@700&family=Raleway:wght@300&family=Roboto+Condensed&family=Roboto:wght@400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@200;300;400&family=Ubuntu:wght@500&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Croissant+One&family=Fjalla+One&family=Fraunces:opsz,wght@9..144,700&family=Josefin+Sans&family=Montserrat&family=Mr+Dafoe&family=Open+Sans&family=Oswald:wght@300&family=Permanent+Marker&family=Poppins:wght@500&family=Protest+Riot&family=Quicksand:wght@700&family=Raleway:wght@300&family=Roboto+Condensed&family=Roboto:wght@400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@200;300;400&family=Ubuntu:wght@500&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Croissant+One&family=Fjalla+One&family=Fraunces:opsz,wght@9..144,700&family=Josefin+Sans&family=Montserrat&family=Mr+Dafoe&family=Open+Sans&family=Oswald:wght@300&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:ital@0;1&family=Poppins:wght@500&family=Protest+Riot&family=Quicksand:wght@700&family=Raleway:wght@300&family=Roboto+Condensed&family=Roboto:wght@400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@200;300;400&family=Ubuntu:wght@500&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    </head>
+<body>
+	<header id="head">
+    <img id="logo" src="images/wed-removebg-preview.png" onclick="window.location.href='index.html'">
+      <a href="index.html" id="namelogo">VowVenture</a>
+      <ul id="enter">
+        <li class="headContent" onclick="changePage()">Services</li>
+        <li class="headContent">Contact</li>
+        <li class="headContent">Book</li>
+          <li id="signin" class="headContent" onclick="getDetailIn()"><p> Signin </p></li>
+          <li id="currUser"></li>
+        </ul>
+    </header>
+    <div id="line"></div>
+    <section id="form">
+    	<input class="inputs" id="name" type="text" placeholder="Name" autocomplete="off">
+    	
+    	<textarea class="inputs" id="address" placeholder="Address" autocomplete="off"></textarea>
+    	
+    	<input class="inputs" id="phno" type="number" placeholder="Phone" autocomplete="off">
+    	
+    	<input class="inputs" id="bride" type="text" placeholder="Bride name" autocomplete="off">
+    	
+    	<input class="inputs" id="groom" type="text" placeholder="Groom name" autocomplete="off">
+    	
+    	<input class="inputs" id="stdt" type="date" placeholder="Start date" autocomplete="off">
+    	
+    	<input class="inputs" id="enddt" type="date" placeholder="End date" autocomplete="off">
+    	
+    	
+    	<select class="inputs" id="city" onchange="selectVenue()">
+    		
+    	</select>
+    	
+    	<select class="inputs" id="venue" >
+    		<option>Select venue</option>
+    	</select> 
+    	
+    	<select class="inputs" id="package">
+    		<option id="onlypack"></option>
+    	</select>
+    	
+    	<select class="inputs" id="attendees" onchange="selectVenue()">
+    		<option value="attendees">Select number of attendees</option>
+    		<option value="lessthan50">Less than 50</option>
+    		<option value="50-200">50 - 200</option>
+    		<option value="200-500">200 -500</option>
+    		<option value="morethan500">More than 500</option>
+    	</select>
+    	<a href="showServices.html">View this package</a>
+    	<button id="submitDet" onclick="getDetailsForcheck()"> SUBMIT </button>
+    </section>
+    <script src="form.js"></script>   
+</body>
+</html>
