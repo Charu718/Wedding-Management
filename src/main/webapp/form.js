@@ -95,6 +95,7 @@ function getDetailsForcheck(){
 	req.onreadystatechange = function(){
 		if(this.status == 200 && this.readyState == 4){
 		 	alert(this.responseText);
+		 	window.location.href = "payment.html";
    	 	 }
    	 
    }

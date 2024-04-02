@@ -18,7 +18,7 @@
       <ul id="enter">
         <li class="headContent" onclick="changePage()">Services</li>
         <li class="headContent">Contact</li>
-        <li class="headContent">Book</li>
+        <li class="headContent" onclick="window.location.href = 'Userbills.html'">Your bookings</li>
           <li id="signin" class="headContent" onclick="getDetailIn()"><p> Signin </p></li>
           <li id="currUser"></li>
         </ul>
@@ -27,6 +27,27 @@
     <section id="custom">
     </section>
     <script src="custom.js"></script> 
+    <script src="sample.js"></script>   
+        <script>
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function(){
+          if(this.readyState == 4 && this.status == 200){
+     		 var user = this.responseText;
+     		 console.log(user);
+            if(user.includes("login")){
+     		   alert(this.responseText);
+     	   }
+            else if(user.includes("Welcome")){
+     		   var stIdx = user.indexOf("-")+1;
+     		   document.getElementById("currUser").innerText = user.substring(stIdx);
+     		   showLogout();
+     	   }
+          }
+        }
+        req.open('POST', "http://localhost:8080/Wedding_management/checkUser");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send();
+        </script>
 <body>
 
 </body>
