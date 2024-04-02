@@ -16,6 +16,7 @@ var req = new XMLHttpRequest();
 	window.location.href = "showPacks.html";
 }
 function showOldBills(cusdetails){
+	console.log("check");
 	var arrayOfHistory = cusdetails.data;
 	var parent = document.getElementById("Userbill");
 	for(i=0; i<arrayOfHistory.length; i++){
