@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head> 
+      <link href="welcome.css" rel="stylesheet" type="text/css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Croissant+One&family=Fjalla+One&family=Fraunces:opsz,wght@9..144,700&family=Josefin+Sans&family=Montserrat&family=Mr+Dafoe&family=Open+Sans&family=Oswald:wght@300&family=Permanent+Marker&family=Poppins:wght@500&family=Protest+Riot&family=Quicksand:wght@700&family=Raleway:wght@300&family=Roboto+Condensed&family=Roboto:wght@400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@200;300;400&family=Ubuntu:wght@500&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Croissant+One&family=Fjalla+One&family=Fraunces:opsz,wght@9..144,700&family=Josefin+Sans&family=Montserrat&family=Mr+Dafoe&family=Open+Sans&family=Oswald:wght@300&family=Permanent+Marker&family=Poppins:wght@500&family=Protest+Riot&family=Quicksand:wght@700&family=Raleway:wght@300&family=Roboto+Condensed&family=Roboto:wght@400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@200;300;400&family=Ubuntu:wght@500&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Croissant+One&family=Fjalla+One&family=Fraunces:opsz,wght@9..144,700&family=Josefin+Sans&family=Montserrat&family=Mr+Dafoe&family=Open+Sans&family=Oswald:wght@300&family=Pacifico&family=Permanent+Marker&family=Playfair+Display:ital@0;1&family=Poppins:wght@500&family=Protest+Riot&family=Quicksand:wght@700&family=Raleway:wght@300&family=Roboto+Condensed&family=Roboto:wght@400;700&family=Source+Code+Pro&family=Source+Sans+3:wght@200;300;400&family=Ubuntu:wght@500&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    </head>
+<body>
+	<header id="head">
+    <img id="logo" src="images/wed-removebg-preview.png" onclick="window.location.href='index.html'">
+      <a href="index.html" id="namelogo">VowVenture</a>
+      <ul id="enter">
+        <li class="headContent" onclick="changePage()">Services</li>
+        <li class="headContent">Contact</li>
+        <li class="headContent" onclick="window.location.href = 'Userbills.html'">Your bookings</li>
+          <li id="signin" class="headContent" onclick="getDetailIn()"><p> Signin </p></li>
+          <li id="currUser"></li>
+        </ul>
+    </header>
+    <div id="line"></div>
+    <section id="payment">
+    	<div class="half method">
+    		<p id="methodSelection">How would you like to pay?</p>
+    		<div class="type gpay">
+    		<p style="text-align: center">  Card </p>
+    		</div>
+    		<div class="type card">
+    		<p style="text-align: center">  GPay </p>
+    		</div>
+    	</div>
+    	<div class="half paynow">
+    		<label>CARD HOLDER NAME</label><br>
+    		<input id="holdername" type="text"><br>
+    		<label>CARD NUMBER</label><br>
+    		<input id="cardnum" type="number">
+    		<label>EXPIRATION DATE</label><br>
+    		<input id="exp" type="month"><br>
+    		<label>CVV/CVC</label><br>
+    		<input id="cvv" type="number"><br>
+    		
+    		<label>Phone</label>
+    		<input id="phonenumber" type="number">
+    		<button id="getAmt" onclick="getCard()">Pay now</button>
+    	</div>
+    	
+    </section>
+    <div id="success">
+    <p style="color: white">Payment Successful!!</p>
+    </div>
+    
+    <script src="payment.js"></script>   
+        <script>
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function(){
+          if(this.readyState == 4 && this.status == 200){
+     		 var user = this.responseText;
+     		 console.log(user);
+            if(user.includes("login")){
+     		   alert(this.responseText);
+     	   }
+            else if(user.includes("Welcome")){
+     		   var stIdx = user.indexOf("-")+1;
+     		   document.getElementById("currUser").innerText = user.substring(stIdx);
+     		   showLogout();
+     	   }
+          }
+        }
+        req.open('POST', "http://localhost:8080/Wedding_management/checkUser");
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send();
+        </script>
+</body>
+</html>
