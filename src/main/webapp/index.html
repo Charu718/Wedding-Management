@@ -19,7 +19,7 @@
         <ul id="enter">
         <li class="headContent" onclick="changePage()">Services</li>
         <li class="headContent">Contact</li>
-        <li class="headContent">Book</li>
+        <li class="headContent" onclick="window.location.href = 'Userbills.html'">Your bookings</li>
           <li id="signin" class="headContent" onclick="getDetailIn()"><p> Signin </p></li>
           <li id="currUser"></li>
         </ul>
@@ -53,13 +53,14 @@
      		 var user = this.responseText;
      		 console.log(user);
             if(user.includes("login")){
+            	console.log("please login");
      		   alert(this.responseText);
      	   }
             else if(user.includes("Welcome")){
+            	console.log("hii");
      		   var stIdx = user.indexOf("-")+1;
      		   document.getElementById("currUser").innerText = user.substring(stIdx);
      		   showLogout();
-     		   window.location.href = "Userbills.html";
      	   }
           }
         }

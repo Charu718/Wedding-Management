@@ -287,10 +287,13 @@ header {
 	height: 200%;
 	width: 100%;
 	padding: 3%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 .bill{
 	height:40%;
-	width:100%;
+	width:20%;
 	border: 2px solid;
 	padding-top: 2%;
 	padding-left: 3%;
@@ -317,4 +320,74 @@ header {
 }
 .customcards{
 	height:20%;
+}
+#payment{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:5%;
+	position: relative;
+}
+.half{
+	width:40%;
+	height:70%;
+}
+#holdername, #cardnum, #exp, #cvv{
+	width: 30%;
+}
+.method{
+	background-color: #fce8d7;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.type{
+	height: 40%;
+	width: 60%;
+	border: 1px solid;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.gpay{
+	position: relative;
+}
+.card{
+	position: absolute;
+	top: 55%;
+	width: 24%;
+	height: 24%;
+}
+.card:hover{
+	transform: scale(1.1);
+}
+.gpay:hover{
+	transform: scale(1.1);
+}
+#methodSelection{
+	margin-bottom: 4%;
+}
+.paynow{
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	padding-left: 3%;
+}
+#getAmt{
+	width:80%;
+}
+#success{
+	height: 45%;
+    width: 22%;
+    border-radius: 50%;
+    border: 1px solid;
+    position: absolute;
+    margin-top: -34%;
+    margin-left: 42%;
+    display: none;
+    background-color:  #9e836d;
+    color: white;
+    font-size: 2em;
+    flex-direction: column;
 }
