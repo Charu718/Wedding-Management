@@ -22,12 +22,13 @@ public class BookingDao {
 		pstmt.setString(1, place);
 		ResultSet res = pstmt.executeQuery();
 		while(res.next()) {
-			System.out.println("start"+(startdate.compareTo(res.getString("event_stdate")) >= 0));
-			System.out.println("end"+(enddate.compareTo(res.getString("event_endDt")) <= 0));
-			if(!(startdate.compareTo(res.getString("event_stdate")) >= 0 && (enddate.compareTo(res.getString("event_endDt")) <= 0 || enddate.compareTo(res.getString("event_endDt")) >= 0)) ){
-				return true;
-			}
+			System.out.println("startdate - " + startdate + "&& " + res.getString("event_stdate") +" --  "+(startdate.compareTo(res.getString("event_stdate")) >= 0));
+			System.out.println("startdate - " + startdate + "&& " + res.getString("event_endDt") +" --  "+(startdate.compareTo(res.getString("event_endDt")) <= 0 ));
+			System.out.println("enddate - " + enddate + "&& " + res.getString("event_endDt") +" --  "+(enddate.compareTo(res.getString("event_endDt")) > 0));
+//			if(!(startdate.compareTo(res.getString("event_stdate")) >= 0 && (startdate.compareTo(res.getString("event_endDt")) <= 0 || enddate.compareTo(res.getString("event_endDt")) > 0)) ){
+//				return true;
+//			}
 		}
-		return false;
+		return true;
 	}
 }
